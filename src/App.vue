@@ -7,7 +7,7 @@
 <script>
 export default {
   name: "app"
-};
+  };
 </script>
 
 <style lang="less">
@@ -24,10 +24,16 @@ html {
 .page {
   background-color: #f3f3f3;
   height: 100%;
+  padding-top: 40px;
 }
 #app {
   .mint-header {
-    background-color: #ffffff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f5f5f5;
+    font-weight: bold;
     color: #000;
   }
   .mint-cell-wrapper {

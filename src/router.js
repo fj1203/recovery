@@ -15,6 +15,10 @@ let routes = [
     path: '/map',
     name: 'Map',
     component: () => import('./views/map.vue'),
+  },{
+    path: '/recycler',
+    name: 'Recycler',
+    component: () => import('./views/recycler.vue'),
   }
 ]
 const router = new Router({

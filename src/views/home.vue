@@ -15,7 +15,7 @@
         <div class="item">我的订单</div>
         <div class="item">我的积分</div>
         <div class="item">关于我们</div>
-        <div class="item">成为回收员</div>
+        <div @click="recycler" class="item">成为回收员</div>
       </div>
       <mt-button size="large" @click="order" type="primary">一键下单</mt-button>
     </div>
@@ -53,6 +53,9 @@ export default {
   methods:{
     order(){
       this.$router.push('/order')
+    },
+    recycler(){
+      this.$router.push('/recycler')
     }
   }
 };

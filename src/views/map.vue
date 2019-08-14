@@ -1,6 +1,11 @@
 
 <template>
   <div class="order page">
+    <mt-header title="选择地址">
+      <mt-button slot="left" @click="back" icon="back"></mt-button>
+      <mt-button slot="right" @click="sure" type="primary">确定</mt-button>
+    </mt-header>
+
     <iframe
       class="map-item"
       width="100%"
@@ -12,16 +17,27 @@
 </template>
 
 <script>
+import { mapMutations } from "vuex";
 export default {
   name: "Map",
-
   data() {
     return {
-      username: ""
+      loc: {
+        latlng: {
+          lat: "",
+          lng: ""
+        }
+      }
     };
   },
-  destroyed() {
-    window.removeEventListener("message", function() {}.bind(this), true);
+  beforeDestroy() {
+    window.removeEventListener(
+      "message",
+      function() {
+        console.log(111);
+      }.bind(this),
+      true
+    );
   },
   mounted() {
     let that = this;
@@ -30,14 +46,29 @@ export default {
       function(event) {
         var loc = event.data;
         if (loc && loc.module == "locationPicker") {
-          console.log("location", loc);
-          that.$router.go(-1);
+          if (
+            that.loc.latlng.lat != loc.latlng.lat ||
+            that.loc.latlng.latlng != loc.latlng.latlng
+          ) {
+            that.loc = loc;
+          }
         }
       }.bind(this),
       true
     );
   },
-  methods: {}
+  methods: {
+    ...mapMutations(["setAddress"]),
+    back() {
+      this.$router.go(-1);
+    },
+    sure() {
+      if (this.loc.latlng.lat) {
+        this.setAddress(this.loc);
+        this.$router.go(-1)
+      }
+    }
+  }
 };
 </script>
 

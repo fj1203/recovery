@@ -106,6 +106,7 @@ export default {
             // e.target.value = this.types[this.type].regExp(this.val);
         },
         _input (e) {
+            console.log(11)
             this.selectionEnd = e.target.selectionEnd;
             if (e.target.value.length >= this.types[this.type].fmaxlength && this.val.length === this.types[this.type].maxlength) {
                 this.$nextTick(() => {
@@ -177,9 +178,9 @@ export default {
 <style lang="less" scoped>
 .mint-field-core {
     position: relative;
+    display: flex;
 }
 .mint-field-clear {
     right: 0;
 }
-
 </style>
