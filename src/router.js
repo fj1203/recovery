@@ -19,6 +19,14 @@ let routes = [
     path: '/recycler',
     name: 'Recycler',
     component: () => import('./views/recycler.vue'),
+  },{
+    path: '/my-order',
+    name: 'MyOrder',
+    component: () => import('./views/my-order.vue'),
+  },{
+    path: '/points',
+    name: 'Points',
+    component: () => import('./views/points.vue'),
   }
 ]
 const router = new Router({

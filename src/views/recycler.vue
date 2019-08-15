@@ -1,9 +1,7 @@
 
 <template>
   <div class="order page">
-    <mt-header title="成为回收员">
-      <mt-button slot="left" @click="back" icon="back"></mt-button>
-    </mt-header>
+    <my-header title="成为回收员"></my-header>
     <mt-field label="选择区域："  placeholder readonly v-model="username"></mt-field>
     <mt-field label="详细地址" placeholder="请输入街道，路牌号等" v-model="username"></mt-field>
     <mt-field label="姓名" placeholder="请输入姓名" v-model="username"></mt-field>
@@ -30,9 +28,6 @@ export default {
     };
   },
   methods: {
-    back() {
-      this.$router.go(-1);
-    }
   }
 };
 </script>

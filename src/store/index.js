@@ -4,14 +4,19 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    address: ''
+    address: '',
+    userInfo:''
   },
   getters: {
-    address: state => state.address
+    address: state => state.address,
+    userInfo: state => state.userInfo
   },
   mutations: {
     setAddress(state, val) {
       state.address = val
+    },
+    setUserInfo(state, val) {
+      state.userInfo = val
     }
   }
 });

@@ -12,10 +12,10 @@
     <div class="page-content" v-if="selected=='tab3'">
        <marquee>滚动文字</marquee>
       <div class="items-box">
-        <div class="item">我的订单</div>
-        <div class="item">我的积分</div>
+        <div class="item" @click="myOrder">我的订单</div>
+        <div class="item" @click="points">我的积分</div>
         <div class="item">关于我们</div>
-        <div @click="recycler" class="item">成为回收员</div>
+        <div class="item" @click="recycler">成为回收员</div>
       </div>
       <mt-button size="large" @click="order" type="primary">一键下单</mt-button>
     </div>
@@ -56,6 +56,12 @@ export default {
     },
     recycler(){
       this.$router.push('/recycler')
+    },
+    myOrder(){
+      this.$router.push('/my-order')
+    },
+    points(){
+      this.$router.push('/points')
     }
   }
 };

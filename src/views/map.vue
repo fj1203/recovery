@@ -3,7 +3,7 @@
   <div class="order page">
     <mt-header title="选择地址">
       <mt-button slot="left" @click="back" icon="back"></mt-button>
-      <mt-button slot="right" @click="sure" type="primary">确定</mt-button>
+      <mt-button slot="right" @sure="sure" type="primary">确定</mt-button>
     </mt-header>
 
     <iframe

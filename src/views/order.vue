@@ -1,9 +1,7 @@
 
 <template>
   <div class="order page">
-    <mt-header title="下单">
-      <mt-button slot="left" @click="back" icon="back"></mt-button>
-    </mt-header>
+    <my-header title="下单"></my-header>
     <mt-cell ref="numA" class="mint-field" title="选择区域：">
       <span class="gray" :class="{ black: loc}" @click="setAddress">{{loc ? loc.poiaddress :'请选择地址'}}</span>
     </mt-cell>
@@ -36,9 +34,6 @@ export default {
     })
   },
   methods: {
-    back() {
-      this.$router.go(-1);
-    },
     setAddress() {
       this.$router.push("/map");
     }
