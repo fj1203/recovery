@@ -7,7 +7,6 @@ import './directives/index';
 import router from './router'
 import store from './store'
 import components from './components';
-import MyHeader from './components/my-header';
 import axios from './util/axios'
 Vue.use(MintUI)
 Vue.use(components);

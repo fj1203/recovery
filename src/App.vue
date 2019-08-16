@@ -22,23 +22,23 @@ export default {
     ...mapGetters(["userInfo"])
   },
   mounted() {
-  //  let code  = GetQueryString("code")
-  //   if (!code) {
-  //     window.location.href =
-  //       "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxceda4727aec0ad36&redirect_uri=http://47.106.23.157&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect";
-  //   } else {
-  //     axios.get('https://api.weixin.qq.com/sns/oauth2/access_token',{
-  //       params:{
-  //           appid:'wxceda4727aec0ad36',
-  //           secret:'00b6a1fcee004a31ebae6e68c213d249',
-  //           code:code,
-  //           grant_type:'authorization_code'
-  //       }
-  //     }).then(res => {
-  //       console.log(res)
+   let code  = GetQueryString("code")
+    if (!code) {
+      window.location.href =
+        "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxceda4727aec0ad36&redirect_uri=http://47.106.23.157&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect";
+    } else {
+      axios.get('/wx/sns/oauth2/access_token',{
+        params:{
+            appid:'wxceda4727aec0ad36',
+            secret:'00b6a1fcee004a31ebae6e68c213d249',
+            code:code,
+            grant_type:'authorization_code'
+        }
+      }).then(res => {
+        console.log(res)
         
-  //     });
-  //   }
+      });
+    }
   }
 };
 </script>

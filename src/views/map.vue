@@ -34,7 +34,6 @@ export default {
     window.removeEventListener(
       "message",
       function() {
-        console.log(111);
       }.bind(this),
       true
     );

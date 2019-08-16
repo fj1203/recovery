@@ -1,7 +1,7 @@
 import axios from 'axios'
 // 创建一个axios实例
 var server = axios.create({
-  baseURL: process.env.BASE_API,
+  baseURL: './',
   timeout: 5000
 })
 // 给axios实例创建请求发送拦截器
