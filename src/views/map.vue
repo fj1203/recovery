@@ -1,11 +1,16 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: sueRimn
+ * @Date: 2019-08-13 14:47:35
+ * @LastEditors: sueRimn
+ * @LastEditTime: 2019-08-19 15:47:34
+ -->
 
 <template>
   <div class="order page">
-    <mt-header title="选择地址">
-      <mt-button slot="left" @click="back" icon="back"></mt-button>
-      <mt-button slot="right" @sure="sure" type="primary">确定</mt-button>
-    </mt-header>
-
+    
+    <my-header :rightShow="true" @sure="sure"  title="选择地址"></my-header>
     <iframe
       class="map-item"
       width="100%"

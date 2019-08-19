@@ -1,3 +1,11 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: sueRimn
+ * @Date: 2019-08-15 14:24:33
+ * @LastEditors: sueRimn
+ * @LastEditTime: 2019-08-19 15:40:42
+ -->
 <template>
   <mt-header :title="title">
     <mt-button slot="left" @click="back" icon="back"></mt-button>
@@ -21,7 +29,7 @@ export default {
       this.$router.go(-1);
     },
     sure() {
-      this.emit("sure");
+      this.$emit("sure");
     }
   }
 };
