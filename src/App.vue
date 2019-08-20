@@ -21,20 +21,18 @@ export default {
     ...mapGetters(["userInfo"])
   },
   mounted() {
-    let code = GetQueryString("code");
-    if (!code) {
-      window.location.href =
-        "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx9d772653b94d2a10&redirect_uri=http://47.106.23.157/&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect";
-    } else {
-      this.$http.post("/user/getOpenId", {
+    this.$http
+      .post("http://123.207.86.66:7011/user/getOpenId", {})
+      .then(res => {})
+      .catch(() => {})
+      .finally(() => {});
+    // let code = GetQueryString("code");
+    // if (!code) {
+    //   window.location.href =
+    //     "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx9d772653b94d2a10&redirect_uri=http://47.106.23.157/&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect";
+    // } else {
 
-      }).then(res => {
-          
-      }).catch(() => {
-
-      }).finally(() => {
-      });
-    }
+    // }
   }
 };
 </script>
